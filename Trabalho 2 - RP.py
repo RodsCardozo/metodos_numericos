@@ -6,7 +6,7 @@ rho = 7000
 cp = 500
 a = 1
 b = 1
-n = 50
+n = 100
 n_tempo = 10
 delx = a/n
 dely = b/n
@@ -106,6 +106,17 @@ print(sum(Q_ver) + sum(Q_hor))
 
 import matplotlib.pyplot as plt
 import numpy as np
+plt.figure(figsize=(6, 5))
+plt.imshow(T, cmap='viridis', interpolation='nearest')
+plt.xlabel('x [m]', fontsize=15)
+plt.ylabel('y [m]', fontsize=15)
+plt.title('Mapa de Calor')
+plt.colorbar()
+plt.show()
 
-plt.imshow(T, cmap='hot', interpolation='nearest')
+plt.figure(figsize=(6, 5))
+plt.plot(Erro, linestyle='--', marker='o', color = 'blue', markersize = 4)
+plt.xlabel('Iteração', fontsize=15)
+plt.ylabel('Erro', fontsize=15)
+plt.title('Erro Máximo')
 plt.show()
